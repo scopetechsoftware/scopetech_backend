@@ -26,10 +26,7 @@ const app = express();
 
 app.use('/uploads', express.static('uploads')); // this line is important for upload the image in the upload folder
 app.use(cors()); // Allows React frontend to connect
-app.use(cors({
-  origin: 'http://localhost:3000',
-  credentials: true
-}));
+
 app.use(express.json()); // Parses JSON request bodies
 app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
