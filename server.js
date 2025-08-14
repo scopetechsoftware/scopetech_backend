@@ -44,6 +44,7 @@ app.use('/api/stuins',  require('./routes/studentInstallRoutes'));
 app.use('/api/enquiry',  require('./routes/enquiryRoutes'));
 app.use('/api/user',  require('./routes/userRoutes'));
 app.use('/api/schedule', require('./routes/courseUpdateRoutes'));
+app.use('/api/events', require('./routes/events'));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
