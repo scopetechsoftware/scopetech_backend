@@ -26,7 +26,9 @@ exports.getCourseById = async (req, res) => {
 exports.createCourse = async (req, res) => {
 
   try {
-    const { courseCode, courseName, fees, duration, prerequire,syllabus } = req.body;
+    const { courseCode, courseName, fees, duration, prerequire,syllabus,   description,
+    type,
+    offer, } = req.body;
       
       const newSyllabus = JSON.stringify(syllabus.split(','));
 
@@ -34,11 +36,13 @@ exports.createCourse = async (req, res) => {
 
     
       
-      
+   
       
     
     const image = req.file ? `${req.file.filename}`: '';
-    const course = new Course({ courseCode, courseName, fees, duration, prerequire, image,       syllabus: JSON.parse(newSyllabus || '[]')
+    const course = new Course({ courseCode, courseName, fees, duration, prerequire, image,   description,
+    type,
+    offer,       syllabus: JSON.parse(newSyllabus || '[]')
  });
     await course.save();
     res.json(course);
@@ -54,7 +58,9 @@ exports.createCourse = async (req, res) => {
   exports.updateCourse = async (req, res) => {
 
     try {
-      const {courseCode, courseName, fees, duration, prerequire, syllabus} = req.body;
+      const {courseCode, courseName, fees, duration, prerequire, syllabus,   description,
+    type,
+    offer,} = req.body;
         const newSyllabus = JSON.stringify(syllabus.split(','));
     const updateData = {
       courseCode,
@@ -62,6 +68,9 @@ exports.createCourse = async (req, res) => {
       fees,
       duration,
       prerequire,
+         description,
+    type,
+    offer,
       syllabus: JSON.parse(newSyllabus || '[]')
     }
     if(req.file) updateData.image = `${req.file.filename}`;
