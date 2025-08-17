@@ -37,6 +37,7 @@ const upload = multer({storage: storage,
 
 
 router.get('/', controller.getCourses);
+router.get('/:id', controller.getCourseById);
 router.post('/',upload.single('image'), controller.createCourse);
 router.put('/:id',upload.single('image'), controller.updateCourse);
 router.delete('/:id', controller.deleteCourse);
