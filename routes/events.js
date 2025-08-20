@@ -35,6 +35,7 @@ const upload = multer({
 });
 
 // Routes
+<<<<<<< HEAD
 router.post("/", upload.single("src"), eventController.postevents);
 router.get("/", eventController.getevents);
 router.get("/:id", eventController.geteventById);
@@ -42,3 +43,12 @@ router.put("/:id", upload.single("image"), eventController.updateevent);
 router.delete("/:id", eventController.deleteevent);
 
 module.exports = router;
+=======
+router.post("/events", upload.single("src"), eventController.postevents);
+router.get("/events", eventController.getevents);
+router.get("/events/:id", eventController.geteventById);
+router.put("/events/:id", upload.single("image"), eventController.updateevent);
+router.delete("/events/:id", eventController.deleteevent);
+
+module.exports = router;
+>>>>>>> 4bc5e41bd493343a0b8f1ace609967d9c6e8494d

@@ -44,7 +44,16 @@ app.use('/api/stuins',  require('./routes/studentInstallRoutes'));
 app.use('/api/enquiry',  require('./routes/enquiryRoutes'));
 app.use('/api/user',  require('./routes/userRoutes'));
 app.use('/api/schedule', require('./routes/courseUpdateRoutes'));
+
 app.use('/api/events', require('./routes/events'));
+app.use('/api/festival', require('./routes/festival'));
+app.use('/api/attendance', require('./routes/attendanceRoutes'));
+app.use('/api', require('./routes/events'));
+app.use("/api/reviews",require('./routes/reviews'))
+app.use("/api",require('./routes/studentmark'))
+app.use("/api/projects",require('./routes/projectRoutes'))
+
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
