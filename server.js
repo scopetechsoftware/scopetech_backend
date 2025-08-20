@@ -48,7 +48,7 @@ app.use('/api/schedule', require('./routes/courseUpdateRoutes'));
 app.use('/api/events', require('./routes/events'));
 app.use('/api/festival', require('./routes/festival'));
 app.use('/api/attendance', require('./routes/attendanceRoutes'));
-app.use('/api', require('./routes/events'));
+app.use('/api/events', require('./routes/events'));
 app.use("/api/reviews",require('./routes/reviews'))
 app.use("/api",require('./routes/studentmark'))
 app.use("/api/projects",require('./routes/projectRoutes'))
