@@ -52,6 +52,7 @@ app.use('/api/events', require('./routes/events'));
 app.use("/api/reviews",require('./routes/reviews'))
 app.use("/api",require('./routes/studentmark'))
 app.use("/api/projects",require('./routes/projectRoutes'))
+app.use("/api/jobs", require('./routes/jobRoutes'))
 
 
 
